@@ -1,4 +1,8 @@
-#container{}
+#container{
+	margin: auto;
+	width: 80%
+}
+
 #drawing-canvas{
 	border: 3px solid black;
 }

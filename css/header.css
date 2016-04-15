@@ -1,0 +1,18 @@
+#page-header{}
+#page-header > h1{
+	text-align: center;
+}
+
+#nav-list > li{
+	display: inline;
+}
+#nav-list  a{
+	text-decoration: none;
+	color: black;	
+}
+.nav-button{
+	border: 1px solid black;
+	border-radius: 20px;
+	margin: 10px 20px;
+	padding: 10px 20px;
+}

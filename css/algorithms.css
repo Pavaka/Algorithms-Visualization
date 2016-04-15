@@ -1,0 +1,13 @@
+#drawing-canvas{
+	float:left;	
+
+}
+
+aside{
+	float:left;
+	background-color: red;
+	width: 20%;
+
+	border: 3px solid blue;
+	margin-right: 20px;
+}

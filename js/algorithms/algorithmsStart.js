@@ -1,0 +1,3 @@
+algorithmsStart = {
+	"DFS": DFS
+}

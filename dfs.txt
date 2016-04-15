@@ -1,0 +1,32 @@
+
+function depthFirstSearch(){
+
+	for(i = 0; i < graph.length; ++i){
+		nodesColors.push(Color.WHITE);
+	}
+
+	for(i = 0; i < graph.length; ++i){
+
+		if(nodesColors[i] == Color.WHITE){
+			depthFirstSearch_Visit(i);
+
+		}
+	}
+}
+
+
+function depthFirstSearch_Visit(nodeIndex){
+	nodesColors[nodeIndex] = Color.GRAY;
+	drawNode(nodeIndex, Color.GRAY)
+
+
+	for(i = 0; i < graph[nodeIndex].length; ++i){
+		currentNeighbourIndex = graph[nodeIndex][i][1];
+		if(nodesColors[currentNeighbourIndex] == Color.WHITE){
+			depthFirstSearch_Visit(currentNeighbourIndex);
+		}
+	}
+
+	nodesColors[nodeIndex] = Color.BLACK;
+	drawNode(nodeIndex, Color.BLACK);
+}
