@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="/css/graph_specific_input.css">
+<div id="graph-specific-input">
+	<span>Nodes count: <span id="nodesCount"></span></span>
+	<input type="button" value="STEP" onclick="algorithmNameGoesHere()">
+	<input type="button" value="New Graph" onclick="newGraph()">
+	<input type="button" value="New Node" onclick="newNode()">
+	<input type="text" id="firstNodeFromNewEdge" placeholder="Node 1">
+	<input type="text" id="secondNodeFromNewEdge" placeholder="Node 2">
+	<input type="text" id="costOfEdge"placeholder="Cost">
+	<input type="button" value="Add edge"
+	 onclick="addNewEdge(
+	 document.getElementById('firstNodeFromNewEdge').value, 
+	 document.getElementById('secondNodeFromNewEdge').value,
+	 document.getElementById('costOfEdge').value
+	 )">
+	 <label for="isForCostDrawing">Costs visible:</label>
+	 <input type="checkbox" id="isForCostDrawing" onchange="changeIsCostVisible()"> 
+</div>

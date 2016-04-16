@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
 	<link rel="stylesheet" type="text/css" href="/css/algorithms.css">
+	
 	<meta charset="UTF-8">	
 	<title>Algorithms Visualization</title>
 </head>
@@ -17,11 +18,13 @@
 				<canvas id="drawing-canvas" width="960px" height="650px"></canvas>
 				<aside>
 					<select id="algorithmOptions" name="algorithmOptions" onchange="changeAlgorithm()">
+						<option value="">Choose algorithm</option>
 						<option value="DFS">DFS</option>
 						<option value="BFS">BFS</option>
 					</select>
 					<div id="algorithm-specific-fields">
-						<input type="button" value="STEP" onclick="stepDFS()"></input>
+						
+
 						
 					</div>
 				</aside>
@@ -29,7 +32,8 @@
 			
 		</div>
 	</div>
-		<?php include "scripts.html";?>
+		<!-- <?php include "scripts.html";?> -->
+		<script src="/js/algorithms/logic.js"></script>
 </body>
 
 

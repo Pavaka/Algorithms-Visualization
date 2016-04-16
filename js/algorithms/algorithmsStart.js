@@ -1,3 +1,0 @@
-algorithmsStart = {
-	"DFS": DFS
-}
