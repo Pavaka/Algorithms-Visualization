@@ -32,7 +32,7 @@
 			
 		</div>
 	</div>
-		<!-- <?php include "scripts.html";?> -->
+		<!-- <?php/* include "scripts.html"*/;?> -->
 		<script src="/js/algorithms/logic.js"></script>
 </body>
 

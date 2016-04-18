@@ -34,6 +34,7 @@ const Color = {
 	GRAY: "gray",
 	BLACK: "black"
 }
+STARTING_VERTEX = 0;
 RADIUS = 30;
 const globalCircleForNodesPositionRadius = 200;
 const globalCircleForNodesPositionX = 410;
@@ -178,8 +179,8 @@ function startDFS(){
 		nodesColors[i] = Color.WHITE;
 	}
 	st = new Stack();
-	var dfsNodeIndex = 1;
-	st.push(dfsNodeIndex);
+	// var dfsNodeIndex = 1;
+	st.push(STARTING_VERTEX);
 	previousNodeIndex = NO_PREVIOUS_NODE;
 }
 const NO_WIHTE_NODE = -1;
@@ -243,15 +244,109 @@ function stepDFS(){
 	}
 }
 function DFSmain(){
-	drawNodes();
-	drawEdges();
+	drawGraph();
 	startDFS();
+}
+
+
+class Queue{
+	constructor(){
+		this.queue = [];
+		this.queueSize = 0;
+
+	}
+
+	push(element){
+		this.queue.push(element);
+		this.queueSize++;
+	}
+
+	pop(){
+		if (this.queueSize == 0){
+			return NO_ITEMS_ERROR;
+		}
+		var returnValue = this.queue[0];
+		this.queue.shift();
+		this.queueSize--;
+		return returnValue;
+	}
+
+	top(){
+		if (this.queueSize == 0){
+			return NO_ITEMS_ERROR;
+		}
+		return this.queue[0];
+	}
+	isInQueue(nodeIdx){
+		for(i=0; i<this.queueSize; ++i){
+			if(this.queue[i] == nodeIdx){
+				return true;
+			}
+		}
+	return false;
+	}
+}
+
+function startBFS(){
+	hasBeenInQ = [];
+	for(i = 0; i < graph.length; ++i){
+		nodesColors[i] = Color.WHITE;
+		hasBeenInQ.push(false);
+	}
+	Q = new Queue();
+	Q.push(STARTING_VERTEX);
+	currentBFSnode = STARTING_VERTEX;
+	previousNodeIndex = NO_PREVIOUS_NODE;
+}
+
+
+function findWhiteNeighbour(node){
+	for(i=0; i<graph[node].length; ++i){
+		currNeigh = graph[node][i][1];
+		if(nodesColors[currNeigh] == Color.WHITE){
+			return currNeigh;
+		}
+	}
+	return NO_WIHTE_NODE;
+}
+
+function stepBFS(){
+
+	var nodeIndex = Q.pop();
+	if(nodeIndex == NO_ITEMS_ERROR){
+		for(i = 0 ; i<graph.length; ++i){
+			if(nodesColors[i] == Color.WHITE){
+				nodeIndex = i;
+			}
+		}
+	}
+	if(nodesColors[nodeIndex] == Color.GRAY){
+	}
+	else if(nodesColors[nodeIndex] == Color.WHITE){
+		drawNode(nodeIndex, Color.BLACK, true);
+		nodesColors[nodeIndex] =Color.BLACK;
+		for(i=0; i< graph[nodeIndex].length; ++i){
+			neighIndex = graph[nodeIndex][i][1];
+			if(nodesColors[neighIndex] == Color.WHITE && !hasBeenInQ[neighIndex] ){
+				Q.push(neighIndex);
+				hasBeenInQ[neighIndex] = true;
+			}
+
+		}
+	}
+	else if(nodesColors[nodeIndex] == Color.BLACK){
+	}
+}
+
+function BFSmain(){
+	drawGraph();
+	startBFS();
 }
 
 //Defining dictionary for name to starting function map
 algorithmsStart = {
 	"DFS": DFSmain,
-	"BFS": DFSmain
+	"BFS": BFSmain
 }
 function startAlgorithm(algorithm){
 	algorithmsStart[algorithm]();
