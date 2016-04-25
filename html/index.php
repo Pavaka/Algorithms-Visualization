@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<meta charset="UTF-8">	
 	<title>Algorithms Visualization</title>
 </head>
@@ -9,7 +9,7 @@
 	<div id="container">
 
 			<div id="header-place">
-				<?php include "html/header.html"; ?>
+				<?php include "header.html"; ?>
 			</div>	
 
 			<div id="info">

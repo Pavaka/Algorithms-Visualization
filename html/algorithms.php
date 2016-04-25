@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="/css/index.css">
-	<link rel="stylesheet" type="text/css" href="/css/algorithms.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<link rel="stylesheet" type="text/css" href="../css/algorithms.css">
 	
 	<meta charset="UTF-8">	
 	<title>Algorithms Visualization</title>
@@ -32,8 +32,7 @@
 			
 		</div>
 	</div>
-		<!-- <?php/* include "scripts.html"*/;?> -->
-		<script src="/js/algorithms/logic.js"></script>
+		<script src="../js/logic.js"></script>
 </body>
 
 

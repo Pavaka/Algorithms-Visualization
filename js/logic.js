@@ -463,9 +463,9 @@ function changeAlgorithmSpecificFields(algorithmName){
 	var xhr = new XMLHttpRequest();
 	var url = "";
 	if(algorithmName == "DFS"){
-		url = "/html/graph_specific_input.html";
-	}else{
-		url = "/html/graph_specific_input.html";
+		url = "../html/graph_specific_input.html";
+	}else if(algorithmName == "BFS"){
+		url = "../html/graph_specific_input.html";
 	}
 	//MAGIC
 	xhr.open('GET', url, true);
