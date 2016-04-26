@@ -1,6 +1,7 @@
-#graph-specific-input input{
-	margin: 10;
+#graph-specific-input input {
+	margin: 5px;
+	padding: 5px;
 	display: block;
 	color: white;
-	background-color: darkblue;
+	background-color: blue;
 }

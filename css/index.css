@@ -10,3 +10,7 @@
 html {
 	background-color: skyblue;
 }
+#info {
+	margin: auto;
+	width: 75%;
+}

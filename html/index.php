@@ -13,7 +13,7 @@
 			</div>	
 
 			<div id="info">
-				
+				<h2>This is a website for visualization of algorithms. It is supposed to help students and enthusiasts to learn how algorithms work through visual simualtion.</h1>
 			</div>		
 
 	</div>

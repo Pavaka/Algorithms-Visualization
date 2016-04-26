@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <link rel="stylesheet" type="text/css" href="../css/graph_specific_input.css">
 <div id="graph-specific-input">
-	<span>Nodes count: <span id="nodesCount"></span></span>
+	<!-- <span>Nodes count: <span id="nodesCount"></span></span> -->
 	<input type="button" value="STEP" onclick="algorithmNameGoesHere()">
 	<input type="button" value="New Graph" onclick="newGraph()">
 	<input type="button" value="New Node" onclick="newNode()">

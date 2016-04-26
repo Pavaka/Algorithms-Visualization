@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<link rel="stylesheet" type="text/css" href="../css/algorithms.css">
+	<link rel="stylesheet" type="text/css" href="../css/graph_specific_input.css">
 	
 	<meta charset="UTF-8">	
 	<title>Algorithms Visualization</title>

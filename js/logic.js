@@ -512,4 +512,6 @@ function changeGraph(){
 	recalculateNodePositions();
 	drawGraph();
 	document.getElementById("algorithmOptions").selectedIndex = 0;
+
+
 }
