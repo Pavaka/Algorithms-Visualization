@@ -7,7 +7,9 @@ function clearCanvas(){
 	context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-
+function graphInText(){
+	document.getElementById("graph-in-text").value = "3";
+}
 //GRAPH SETUP
 COST = 100;
 defaultGraph = [
@@ -49,7 +51,12 @@ graph = defaultGraph;
 // The center of each node circle View representation
 nodesCenter = defaultNodesCenter;
 
+function graphInText(){
+	var myJsonString = JSON.stringify(graph);
+	document.getElementById("graph-in-text").value = myJsonString;
+	console.log(myJsonString);
 
+}
 
 
 class Stack{
@@ -463,9 +470,9 @@ function changeAlgorithmSpecificFields(algorithmName){
 	var xhr = new XMLHttpRequest();
 	var url = "";
 	if(algorithmName == "DFS"){
-		url = "../html/graph_specific_input.html";
+		url = "../html/graph_specific_input.php";
 	}else if(algorithmName == "BFS"){
-		url = "../html/graph_specific_input.html";
+		url = "../html/graph_specific_input.php";
 	}
 	//MAGIC
 	xhr.open('GET', url, true);
@@ -483,3 +490,26 @@ function changeAlgorithmSpecificFields(algorithmName){
 }
 
 
+function changeGraph(){
+	var e = document.getElementById("graphList");
+	var strUser = e.options[e.selectedIndex].value;
+	console.log(strUser);
+	res = strUser.split(",[[");
+	console.log(res);
+	console.log(res[0]);
+	console.log(res[0].match(/[0-9]+/g));
+	graph = [];
+	for(var i=0; i<res.length; ++i){
+		var tmp = res[i].match(/[0-9]+/g);
+		graph.push([]);
+		console.log(tmp);
+		console.log(typeof(tmp));
+
+		for(var j=0; j < tmp.length; j+=2){
+			graph[i].push([parseInt(tmp[j]),parseInt(tmp[j+1])]);
+		}
+	}
+	recalculateNodePositions();
+	drawGraph();
+	document.getElementById("algorithmOptions").selectedIndex = 0;
+}

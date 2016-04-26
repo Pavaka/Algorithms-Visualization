@@ -11,14 +11,14 @@
 	<div id="container">
 		<div>
 			<div id="header-place">
-				<?php include "header.html"; ?>
+				<?php include "header.php"; ?>
 			</div>
 
 			<section>
 				<canvas id="drawing-canvas" width="960px" height="650px"></canvas>
 				<aside>
 					<select id="algorithmOptions" name="algorithmOptions" onchange="changeAlgorithm()">
-						<option value="">Choose algorithm</option>
+						<option selected disabled  value="">Choose algorithm</option>
 						<option value="DFS">DFS</option>
 						<option value="BFS">BFS</option>
 					</select>

@@ -9,7 +9,7 @@
 	<div id="container">
 
 			<div id="header-place">
-				<?php include "header.html"; ?>
+				<?php include "header.php"; ?>
 			</div>	
 
 			<div id="info">
